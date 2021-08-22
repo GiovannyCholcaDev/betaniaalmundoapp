@@ -3,5 +3,104 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "betaniaApp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/betania-app",
+      "sourceRoot": "projects/betania-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/betaniaApp",
+            "index": "projects/betania-app/src/index.html",
+            "main": "projects/betania-app/src/main.ts",
+            "polyfills": "projects/betania-app/src/polyfills.ts",
+            "tsConfig": "projects/betania-app/tsconfig.app.json",
+            "assets": [
+              "projects/betania-app/src/favicon.ico",
+              "projects/betania-app/src/assets"
+            ],
+            "styles": [
+              "projects/betania-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/betania-app/src/environments/environment.ts",
+                  "with": "projects/betania-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "betaniaApp:build:production"
+            },
+            "development": {
+              "browserTarget": "betaniaApp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "betaniaApp:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/betania-app/src/test.ts",
+            "polyfills": "projects/betania-app/src/polyfills.ts",
+            "tsConfig": "projects/betania-app/tsconfig.spec.json",
+            "karmaConfig": "projects/betania-app/karma.conf.js",
+            "assets": [
+              "projects/betania-app/src/favicon.ico",
+              "projects/betania-app/src/assets"
+            ],
+            "styles": [
+              "projects/betania-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "betaniaApp"
 }
