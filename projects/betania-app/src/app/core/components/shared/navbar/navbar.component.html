@@ -1,20 +1,17 @@
-
-<!--  -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1069b1;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContents" aria-controls="navbarSupportedContents" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContents">
-        <ul class="navbar-nav  mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse centerMenu" id="navbarSupportedContents">
+        <ul class="navbar-nav mb-3 mb-lg-0">
+        
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
+            <a class="nav-link" aria-current="page"  routerLink="/home" >Inicio</a>
+          </li> 
+        
           <li class="nav-item dropdown" routerLinkActive="active">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ministerios
@@ -29,15 +26,23 @@
               <li><a class="dropdown-item" href="#">Administrativo</a></li>
             </ul>
           </li>
-          
+
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" aria-current="page"  routerLink="/contact" >Contactos</a>
           </li>
+
         </ul>
-        <form class="d-flex">
+        <ul>
+          
+        </ul>
+        <!-- <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+        </form> -->
       </div>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form> 
     </div>
   </nav>
